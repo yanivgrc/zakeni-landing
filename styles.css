@@ -197,6 +197,34 @@ section h2 {
   color: var(--gray-soft);
 }
 
+/* ---- policy document content (additive: new content types only) ---------- */
+.policy .updated {
+  margin-top: 0.25rem;
+  color: var(--gray-soft);   /* #5c5c5c — ~6.7:1 on white, passes AA */
+  font-size: 0.95rem;
+}
+.policy ul {
+  margin: 1rem 0;
+  padding-inline-start: 1.5rem;   /* RTL-aware indent */
+}
+.policy li { margin: 0.4rem 0; }
+.policy .back-home {
+  margin-top: 2.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--gray-line);
+}
+.policy .back-home a {
+  color: var(--green);
+  font-weight: 600;
+}
+/* keep email/phone tokens reading LTR inside RTL prose */
+.policy a[href^="tel:"],
+.policy a[href^="mailto:"] {
+  color: var(--green);
+  font-weight: 600;
+  unicode-bidi: isolate;
+}
+
 /* ---- footer -------------------------------------------------------------- */
 .site-footer {
   border-top: 1px solid var(--gray-line);
