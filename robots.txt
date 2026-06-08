@@ -2,4 +2,4 @@ User-agent: *
 Disallow: /admin*
 Allow: /
 
-Sitemap: https://www.zakeni.co.il/sitemap.xml
+Sitemap: https://zakeni.co.il/sitemap.xml
