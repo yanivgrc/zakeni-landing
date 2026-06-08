@@ -1,0 +1,245 @@
+/* ===========================================================================
+   זכני — landing site styles
+   Single stylesheet · mobile-first · RTL Hebrew · WCAG 2.1 AA
+   No external requests (no web-font CDN) — privacy-friendly by design.
+   To use the brand font, self-host TypoTag Fb / Heebo woff2 files and add an
+   @font-face block here (see DEPLOY.md).
+   =========================================================================== */
+
+:root {
+  --green:       #2E6B4F;   /* brand primary — 6.3:1 contrast on white */
+  --green-dark:  #234f3b;   /* hover / active */
+  --gray-text:   #3f3f3f;   /* body text — ~10:1 on white */
+  --gray-soft:   #5c5c5c;   /* secondary text — ~7:1 on white */
+  --gray-line:   #e2e2e2;   /* hairlines */
+  --bg:          #ffffff;
+  --bg-soft:     #f5f7f6;   /* faint green-tinted panel */
+  --maxw:        46rem;
+  --radius:      12px;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "TypoTag Fb", "Heebo", "Assistant", "Segoe UI", Arial, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: var(--gray-text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  /* sticky footer: keep the footer at the viewport bottom on short pages */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main { flex: 1 0 auto; }
+
+/* ---- skip-to-content link ------------------------------------------------ */
+.skip-link {
+  position: absolute;
+  right: 1rem;
+  top: -4rem;
+  z-index: 100;
+  background: var(--green);
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius);
+  text-decoration: none;
+  transition: top 0.15s ease;
+}
+.skip-link:focus { top: 1rem; }
+
+/* ---- focus visibility ---------------------------------------------------- */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--green-dark);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ---- layout helpers ------------------------------------------------------ */
+.wrap {
+  width: 100%;
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+/* ---- site header (policy pages) ----------------------------------------- */
+.site-header {
+  border-bottom: 1px solid var(--gray-line);
+  background: var(--bg);
+}
+.site-header .wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding-block: 1rem;
+}
+.site-header a.brand-link {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  color: var(--green);
+  min-height: 44px;
+}
+.site-header img.logo-mark { width: 42px; height: auto; }
+.site-header .brand-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--green);
+}
+
+/* ---- hero (index) -------------------------------------------------------- */
+.hero {
+  background: var(--bg-soft);
+  border-bottom: 1px solid var(--gray-line);
+  text-align: center;
+}
+.hero .wrap {
+  padding-block: 3.5rem 3rem;
+}
+.hero img.logo-hero {
+  width: 168px;
+  max-width: 60vw;
+  height: auto;
+  margin-inline: auto;
+}
+.hero h1 {
+  margin: 1.5rem 0 0.5rem;
+  font-size: 1.95rem;
+  line-height: 1.3;
+  color: var(--green);
+  font-weight: 700;
+}
+.hero p.sub {
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--gray-soft);
+}
+
+/* ---- generic section ----------------------------------------------------- */
+section { padding-block: 3rem; }
+section h2 {
+  margin: 0 0 1.5rem;
+  font-size: 1.5rem;
+  color: var(--green);
+  font-weight: 700;
+}
+
+/* ---- contact section ----------------------------------------------------- */
+.contact ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+.contact li {
+  border: 1px solid var(--gray-line);
+  border-radius: var(--radius);
+  background: var(--bg);
+}
+.contact a {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  min-height: 44px;
+  padding: 0.85rem 1.1rem;
+  text-decoration: none;
+  color: var(--gray-text);
+  font-size: 1.1rem;
+}
+.contact a:hover,
+.contact a:focus-visible { background: var(--bg-soft); }
+.contact .label {
+  color: var(--gray-soft);
+  font-size: 0.95rem;
+  min-width: 5.5rem;
+}
+.contact .value {
+  color: var(--green);
+  font-weight: 600;
+  direction: ltr;        /* phone numbers / email read LTR */
+  unicode-bidi: embed;
+}
+.contact .ico {
+  flex: none;
+  width: 24px;
+  height: 24px;
+  fill: var(--green);
+}
+
+/* ---- policy page content ------------------------------------------------- */
+.policy h1 {
+  font-size: 1.7rem;
+  color: var(--green);
+  margin-top: 2.5rem;
+}
+.policy h2 {
+  font-size: 1.25rem;
+  margin-top: 2rem;
+}
+.policy p { margin: 1rem 0; }
+.policy .placeholder-note {
+  background: var(--bg-soft);
+  border: 1px dashed var(--green);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  color: var(--gray-soft);
+}
+
+/* ---- footer -------------------------------------------------------------- */
+.site-footer {
+  border-top: 1px solid var(--gray-line);
+  background: var(--bg-soft);
+  margin-top: 1rem;
+}
+.site-footer .wrap { padding-block: 2.25rem; }
+.site-footer nav ul {
+  list-style: none;
+  margin: 0 0 1.25rem;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+}
+.site-footer nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--green);
+  text-decoration: none;
+  font-weight: 600;
+}
+.site-footer nav a:hover,
+.site-footer nav a:focus-visible { text-decoration: underline; }
+.site-footer p.fineprint {
+  margin: 0.35rem 0;
+  font-size: 0.9rem;
+  color: var(--gray-soft);
+}
+.site-footer p.fineprint a {
+  color: var(--green);
+}
+
+/* ---- responsive ---------------------------------------------------------- */
+@media (min-width: 40rem) {
+  .hero .wrap { padding-block: 4.5rem 4rem; }
+  .hero h1 { font-size: 2.4rem; }
+  .hero img.logo-hero { width: 200px; }
+  .contact ul { grid-template-columns: 1fr 1fr; }
+}
+
+/* ---- respects user motion / contrast preferences ------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}

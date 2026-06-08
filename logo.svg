@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 210" role="img" aria-labelledby="logoTitle">
+  <title id="logoTitle">זכני — מימוש זכויות רפואיות</title>
+  <!-- PLACEHOLDER LOGO: green stethoscope forming a heart.
+       Replace this file with the official brand-book logo when available. -->
+  <g fill="none" stroke="#2E6B4F" stroke-width="14" stroke-linecap="round" stroke-linejoin="round">
+    <!-- heart drawn as a stethoscope tube, open on the lower-right -->
+    <path d="M95 165 C 95 165, 25 110, 25 62 C 25 35, 47 23, 66 23 C 83 23, 95 38, 95 52 C 95 38, 107 23, 124 23 C 143 23, 165 35, 165 62 C 165 84, 150 104, 132 122"/>
+    <!-- tube continuing from the heart down toward the chestpiece -->
+    <path d="M132 122 C 122 138, 150 142, 150 158"/>
+  </g>
+  <!-- chestpiece -->
+  <circle cx="150" cy="172" r="15" fill="#2E6B4F"/>
+  <!-- eartip on the left lobe -->
+  <circle cx="66" cy="23" r="9" fill="#2E6B4F"/>
+</svg>
