@@ -259,6 +259,27 @@ section h2 {
   color: var(--green);
 }
 
+/* ---- footer credit line (GRC Labs attribution) -------------------------- */
+/* Scoped to .credit only — does not affect the © line or the nav links.    */
+.site-footer p.fineprint.credit {
+  text-align: center;
+  font-size: 0.8rem;          /* one step below the 0.9rem footer fineprint */
+}
+/* The link color (--green #2E6B4F) vs the credit text (--gray-soft #5c5c5c)
+   is only ~1.06:1 — below WCAG 1.4.1's 3:1 to distinguish by color alone.
+   So we drop the default solid underline but keep a subtle PERSISTENT cue
+   (dotted underline + 600 weight), then upgrade to a solid underline on
+   interaction. The D6 focus-visible outline still applies on top. */
+.site-footer p.fineprint.credit a {
+  font-weight: 600;
+  text-decoration: underline dotted;
+  text-underline-offset: 2px;
+}
+.site-footer p.fineprint.credit a:hover,
+.site-footer p.fineprint.credit a:focus-visible {
+  text-decoration: underline;
+}
+
 /* ---- responsive ---------------------------------------------------------- */
 @media (min-width: 40rem) {
   .hero .wrap { padding-block: 4.5rem 4rem; }
