@@ -1,0 +1,9 @@
+# Repo stores LF; static site served as-is. Prevents Git for Windows from
+# rewriting the tree to CRLF and showing every file as modified.
+* text=auto eol=lf
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.png binary
+*.jpg binary
+*.ico binary
+*.svg text eol=lf
